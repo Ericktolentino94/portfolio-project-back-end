@@ -11,5 +11,6 @@ CREATE TABLE stocks (
     quantity INT,
     purchaseDate DATE,
     optionType TEXT,
-    expiryDate DATE
+    expiryDate DATE,
+    image TEXT
 );
