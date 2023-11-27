@@ -41,10 +41,10 @@ const deleteStock = async (id) => {
 
 const updateStock = async(id, stock) => {
     try {
-        const {name, price, quantity, purchaseDate, optionType, expiryDate} = stock;
+        const {name, price, quantity, purchaseDate, optionType, expiryDate, image} = stock;
         const updatedStock = await db.one(
-            "UPDATE stocks SET name=$1, price=$2, quantity=$3, purchaseDate=$4, optionType=$5, expiryDate=$6 WHERE id=$7 RETURNING *",
-            [name,price,quantity, purchaseDate, optionType, expiryDate, id]
+            "UPDATE stocks SET name=$1, price=$2, quantity=$3, purchaseDate=$4, optionType=$5, expiryDate=$6, image=$7, WHERE id=$8 RETURNING *",
+            [name,price,quantity, purchaseDate, optionType, expiryDate, image, id]
             );
             return updatedStock
     } catch(err) {
