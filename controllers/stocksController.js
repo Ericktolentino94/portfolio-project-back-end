@@ -49,15 +49,14 @@ stocks.delete("/:id", async (req, res) => {
 });
 
 stocks.put("/:id", async (req, res)=> {
-    try {
+   
     const { id } = req.params;
     const updatedStock = await updateStock(id, req.body);
     if(updatedStock.id) {
         res.status(200).json(updateStock);
-    }
-    } catch(err) {
-        res.status(404).json({success:false, data:{error: err}})
-    }
+  
+    } else res.status(404).json({success:false, data:{error: "no stock found with that ID"}})
+    
 
 });
 

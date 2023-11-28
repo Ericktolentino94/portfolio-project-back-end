@@ -39,7 +39,7 @@ const deleteStock = async (id) => {
     }
 };
 
-const updateStock = async(id, stock) => {
+const updateStock = async (id, stock) => {
     try {
         const {name, price, quantity, purchaseDate, optionType, expiryDate, image} = stock;
         const updatedStock = await db.one(
