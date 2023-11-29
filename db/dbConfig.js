@@ -11,5 +11,6 @@ const cn = {
 };
 
 const db = pgp(cn);
+console.log(cn)
 
 module.exports = db;

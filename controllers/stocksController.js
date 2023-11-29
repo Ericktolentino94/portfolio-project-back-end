@@ -53,7 +53,7 @@ stocks.put("/:id", async (req, res)=> {
     const { id } = req.params;
     const updatedStock = await updateStock(id, req.body);
     if(updatedStock.id) {
-        res.status(200).json(updateStock);
+        res.status(200).json(updatedStock);
   
     } else res.status(404).json({success:false, data:{error: "no stock found with that ID"}})
     
