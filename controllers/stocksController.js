@@ -5,6 +5,7 @@ const stocks = express.Router();
 
 stocks.get("/", async (req, res) => {
     const allStocks = await getAllStocks();
+    console.log(allStocks)
     try {
         if(allStocks[0]) {
             res.status(200).json({success:true, data:{ payload: allStocks } });
